@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tE5KBUToHUylfUj7yCvr7g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/258491.html" DesignTimeRectangle="658, 530, 292, 41" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="1eb334cd-e129-4607-9db8-b58bb2ad9252" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="fdf7505a-9071-44a4-a458-d14729b20481" CvTextArea="484, 532, 172, 16" CvTextArgument="School Stationary :" CvType="Text" DesignTimeRectangle="486, 531, 170, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Stationary : ' check:innerText='School Stationary :' /&gt;" Guid="bb91909e-b3af-4d58-88d0-0c3d4325569d" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="37257f62dbbbc681450b97e37e99fa28.png" xmlns="">0eAcAFkLXLkqb0lWFvw9l7A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Student's Strenth",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "07b6HyCIX0eM1ls1R6KY5Q",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/07b6HyCIX0eM1ls1R6KY5Q",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg",
+  "Created": "2025-03-13T19:29:39.6892753Z",
+  "Updated": "2025-03-13T19:29:39.6892753Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

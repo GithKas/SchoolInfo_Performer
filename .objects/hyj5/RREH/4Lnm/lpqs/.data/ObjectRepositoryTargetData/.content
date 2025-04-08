@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0-6JuB08p0mboHxLcowWkw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/258491.html" CVScreenId="978df691-d2a0-4921-bc6a-681265cfdc94" CvTextArea="674, 547, 215, 12" CvType="AnyWordGroup" DesignTimeRectangle="676, 546, 275, 26" DesignTimeScaleFactor="0.6666666865348816" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="205592a2-55c4-4e4f-b47a-f14c427c7ed9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="978df691-d2a0-4921-bc6a-681265cfdc94" CvTextArea="509, 547, 160, 12" CvTextArgument="School Teaching method's" CvType="Text" DesignTimeRectangle="511, 547, 164, 13" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Teaching method*' check:innerText='School Teaching method&amp;apos;s :' /&gt;" Guid="43c10382-4536-4e04-a48c-a4aec8da6db1" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d05baa2c63576cfc92dea6f74e980176.png" xmlns="">04tBh-tmdR0Kt2zyoI2VmeA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

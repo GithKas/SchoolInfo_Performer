@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gzJxMm67k0KiMKom6jNs-g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/441539.html" CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" CvTextArea="354, 160, 657, 35" CvType="AnyWordGroup" DesignTimeRectangle="16, 155, 1335, 39" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' /&gt;" Guid="23dd770d-018e-41b5-87f6-2a0513aeb520" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/*.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bfb9befcbcfc02ac0d0d1ce1f735288f.png" xmlns="">0gR3T3krSQk2I6IoOVpZKhg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

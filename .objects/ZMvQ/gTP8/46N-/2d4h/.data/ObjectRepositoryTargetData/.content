@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="kINiksmxWUOpyBzggdbd-g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school" CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" CvElementArea="584, 366, 180, 24" CvType="InputBox" DesignTimeRectangle="586, 368, 177, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='SchoolCode' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="673cfc0e-4a7e-4f1c-9309-21f39552733b" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" CvTextArea="494, 370, 88, 14" CvTextArgument="School Code:" CvType="Text" DesignTimeRectangle="495, 370, 87, 14" ElementType="Text" Guid="6a05d81c-4bdf-4dbf-82fd-e3eb7cc3d4fd" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="fd2d234d0969a25e599e1cc0037b9c0f.png" xmlns="">097P2mLjrGkyGY-yYKpdQ_Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

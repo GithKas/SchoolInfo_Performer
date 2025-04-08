@@ -1,0 +1,565 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RPAChallengeAddItems" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_InputDataTable" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_OutFolderFileName" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>RPAChallengeAddItems_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RPAChallengeAddItems" sap:VirtualizedContainerService.HintSize="1002,10066" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SchoolInfoAddItems.xaml Started&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Rpa Challenge(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="606,9870" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="8a2d6759-e9e1-4d26-b77b-bd718e0a0979" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,9630" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="LastName" />
+              <Variable x:TypeArguments="x:String" Name="SchoolCode" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="538,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[SchoolCode]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("School Code").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[String.IsNullOrEmpty(SchoolCode)]" sap:VirtualizedContainerService.HintSize="538,9454" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,165" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;School Info is not present to enter.&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <Throw Exception="[new BusinessRuleException(&quot;School Code is not present to enter.&quot;)]" sap:VirtualizedContainerService.HintSize="502,48" sap2010:WorkflowViewState.IdRef="Throw_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Throw>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,9158" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="var_SchoolInfoUrl" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'School Code'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="8a2d6759-e9e1-4d26-b77b-bd718e0a0979" Text="[SchoolCode]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="botsdna.com/school" CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" ContentHash="kINiksmxWUOpyBzggdbd-g" CvElementArea="584, 366, 180, 24" CvType="InputBox" DesignTimeRectangle="586, 368, 177, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='SchoolCode' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="673cfc0e-4a7e-4f1c-9309-21f39552733b" InformativeScreenshot="fd2d234d0969a25e599e1cc0037b9c0f.png" IsResponsive="True" Reference="6dvU-60sjkapofsDhB2_vQ/2d4h4iLHgkmg5BaVxQdDdQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" CvTextArea="494, 370, 88, 14" CvTextArgument="School Code:" CvType="Text" DesignTimeRectangle="495, 370, 87, 14" ElementType="Text" Guid="6a05d81c-4bdf-4dbf-82fd-e3eb7cc3d4fd" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Entered School Code as : &quot;+SchoolCode]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="502,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a2d6759-e9e1-4d26-b77b-bd718e0a0979" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="botsdna.com/school" CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" ContentHash="0akyRxjW7kC4qKDdW8r5Gw" CvElementArea="767, 352, 119, 51" CvTextArea="800, 369, 53, 15" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="769, 354, 115, 48" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='SearchSchool' tag='INPUT' type='button' class='button' aaname='Search' check:text='Search' /&gt;" Guid="b3dd812a-39e1-499d-8ff3-08c4445cc249" InformativeScreenshot="f4d7349a756652aa71e7e9dfd256cbae.png" Reference="6dvU-60sjkapofsDhB2_vQ/uwWNYhl2xEaPe6kEG_sI6w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Click on Search Buton for School Code : &quot;+SchoolCode]" />
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="502,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[var_SchoolInfoUrl]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_Config("ApplicationURL").ToString+SchoolCode+".html"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;School Info Url is : &quot;+var_SchoolInfoUrl]" />
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Chrome botsdna.comschool441539.html" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="502,8173" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" Version="V2" WindowResize="Maximize">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,7933" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="ScAddress" />
+                            <Variable x:TypeArguments="x:String" Name="ScPhoneNo" />
+                            <Variable x:TypeArguments="x:String" Name="ScName" />
+                            <Variable x:TypeArguments="x:Int32" Name="ScName_RowIndex" />
+                            <Variable x:TypeArguments="x:String" Name="ScNoOfStudent" />
+                            <Variable x:TypeArguments="x:String" Name="ScPrincipleName" />
+                            <Variable x:TypeArguments="x:String" Name="ScNoOfStaff" />
+                            <Variable x:TypeArguments="x:String" Name="ScNoOfNonTeachingStaff" />
+                            <Variable x:TypeArguments="x:String" Name="ScNoOfSchoolBuses" />
+                            <Variable x:TypeArguments="x:String" Name="ScPlayground" />
+                            <Variable x:TypeArguments="x:String" Name="ScFacilities" />
+                            <Variable x:TypeArguments="x:String" Name="ScAccrediation" />
+                            <Variable x:TypeArguments="x:String" Name="ScHostel" />
+                            <Variable x:TypeArguments="x:String" Name="ScCanteen" />
+                            <Variable x:TypeArguments="x:String" Name="ScStationary" />
+                            <Variable x:TypeArguments="x:String" Name="ScTeachingMethod" />
+                            <Variable x:TypeArguments="x:String" Name="ScTiming" />
+                            <Variable x:TypeArguments="x:String" Name="ScAchivements" />
+                            <Variable x:TypeArguments="x:String" Name="ScAwards" />
+                            <Variable x:TypeArguments="x:String" Name="ScUniform" />
+                            <Variable x:TypeArguments="x:String" Name="ScType" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGetText DisplayName="Get Text 'School Address'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScAddress]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/441539.html" CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" ContentHash="hy243CsWP0KXpBDTrXs-dg" CvTextArea="688, 303, 165, 19" CvType="AnyWordGroup" DesignTimeRectangle="686, 301, 264, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="f1ee6b8d-a03a-4243-82d6-a42a49eefd91" InformativeScreenshot="3412e350e98e9e29bfb331a84881a834.png" Reference="6dvU-60sjkapofsDhB2_vQ/mhAus9PZSEeKZfGmJUAj7A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/441539.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" WaitForReadyArgument="Complete">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" CvTextArea="533, 303, 151, 16" CvTextArgument="School Address :" CvType="Text" DesignTimeRectangle="535, 302, 149, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Address : ' check:innerText='School Address :' /&gt;" Guid="bf8e23f9-cc82-4c74-9d55-9cdd16600856" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Phonenumber'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScPhoneNo]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/441539.html" CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" ContentHash="nt8aqeckOEiELM4084NeTw" CvTextArea="679, 344, 111, 15" CvType="AnyWordGroup" DesignTimeRectangle="686, 341, 264, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="aaf8011f-9c55-45f9-97e6-2b3d91495775" InformativeScreenshot="b207dbdf91dcb686907d7815edbe4e88.png" Reference="6dvU-60sjkapofsDhB2_vQ/KovOCsebJUWcG8AZ9PajVQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/441539.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" CvTextArea="480, 343, 194, 16" CvTextArgument="School Phonenumber" CvType="Text" DesignTimeRectangle="482, 342, 202, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Phonenumber : ' check:innerText='School Phonenumber :' /&gt;" Guid="093e44fa-3d3b-4aad-8a2e-02e994765bfb" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;School Address is : &quot;+ScAddress+&quot; &amp; School Phone number is : &quot;+ScPhoneNo]" />
+                          <uix:NGetText DisplayName="Get Text School Name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScName]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/441539.html" CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" ContentHash="gzJxMm67k0KiMKom6jNs-g" CvTextArea="354, 160, 657, 35" CvType="AnyWordGroup" DesignTimeRectangle="16, 155, 1335, 39" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' /&gt;" Guid="23dd770d-018e-41b5-87f6-2a0513aeb520" InformativeScreenshot="bfb9befcbcfc02ac0d0d1ce1f735288f.png" Reference="6dvU-60sjkapofsDhB2_vQ/UBMko3TXrUi0MSvF0b79Wg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/*.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;School Name is : &quot;+ScName]" />
+                          <uix:NGetText DisplayName="Get Text 'Student's Strenth'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScNoOfStudent]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" ContentHash="0dOg8Bc0qEKm1Wd1KvZW-Q" CvElementArea="668, 400, 280, 21" CvTextArea="659, 384, 129, 17" CvTextArgument=":794 Students" CvType="InputBox" DesignTimeRectangle="668, 382, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="cb2731f2-9b0c-4689-943b-3549d5951204" InformativeScreenshot="a6314083e406a5158c69ac298eafe6b4.png" Reference="6dvU-60sjkapofsDhB2_vQ/07b6HyCIX0eM1ls1R6KY5Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="495, 384, 161, 16" CvTextArgument="Student's Strenth" CvType="Text" DesignTimeRectangle="497, 383, 170, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Student&amp;apos;s Strenth : ' check:innerText='Student&amp;apos;s Strenth :' /&gt;" Guid="b5f5af10-f2fb-48f0-8619-06466420827b" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'Prncipal Name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScPrincipleName]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" ContentHash="ctF_bTQ_T0WY4coi1yqx5g" CvTextArea="659, 424, 183, 20" CvType="AnyWordGroup" DesignTimeRectangle="668, 422, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="538bdaa7-4d8d-4465-baaf-6cbb6bef653d" InformativeScreenshot="6692c18d3c6d86bcd038e722af54652a.png" Reference="6dvU-60sjkapofsDhB2_vQ/3xJ1om2is025N3ygeEAvyw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="523, 424, 133, 20" CvTextArgument="Prncipal Name" CvType="Text" DesignTimeRectangle="524, 423, 143, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Prncipal Name : ' check:innerText='Prncipal Name :' /&gt;" Guid="81700696-bfaf-42e4-bf99-39bf75a9812e" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'Number of TeachingStaff'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScNoOfStaff]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" ContentHash="NnCXWUBJ8EGavoYJcHcNhA" CvTextArea="659, 465, 42, 15" CvType="AnyWordGroup" DesignTimeRectangle="668, 462, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="08568b9f-c1d6-4d9f-83c0-67dea34e43c2" InformativeScreenshot="eddac73e5de16874fcf399fed12258c5.png" Reference="6dvU-60sjkapofsDhB2_vQ/Pypp2rHogUm_FVeC2VLBZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="429, 464, 227, 20" CvTextArgument="Number of TeachingStaff" CvType="Text" DesignTimeRectangle="430, 463, 237, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Number of TeachingStaff : ' check:innerText='Number of TeachingStaff :' /&gt;" Guid="6eb4e4aa-2c2b-4665-aa0e-bad7e45fd3be" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'Number of Non-TeachingS…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScNoOfNonTeachingStaff]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" ContentHash="LQH6xxF-60Wm3a2e7IUeJg" DesignTimeRectangle="668, 502, 282, 41" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="eece4933-cb31-4dc2-967e-f17b5169ccbf" InformativeScreenshot="4bdbd2504671c5c00c2335b43372f8cc.png" Reference="6dvU-60sjkapofsDhB2_vQ/kUPPohz8fEOR4FX3U2SaKw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="523, 503, 144, 38" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Number of Non-TeachingStaff : ' check:innerText='Number of Non-TeachingStaff :' /&gt;" Guid="a02ad2fc-615e-47b7-822b-8f4b92f42f25" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'Number of School buses'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScNoOfSchoolBuses]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" ContentHash="sS8ezvDjwU-nR2cAaAhshA" CvTextArea="659, 546, 32, 16" CvType="AnyWordGroup" DesignTimeRectangle="668, 543, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="d75b2c37-ef40-4fd9-9700-26ac8eedca26" InformativeScreenshot="eb929152fecc4b075b996051a929980f.png" Reference="6dvU-60sjkapofsDhB2_vQ/TK-SO2l-aUyQdW6ABi-1Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="436, 545, 220, 17" CvTextArgument="Number of School buses" CvType="Text" DesignTimeRectangle="437, 544, 230, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Number of School buses : ' check:innerText='Number of School buses :' /&gt;" Guid="4ead1ab5-b6f4-424a-9aab-bcfd1a466490" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Playground'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScPlayground]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" ContentHash="epabfZFS3UOq5Js40hYksw" CvTextArea="659, 585, 197, 20" CvType="AnyWordGroup" DesignTimeRectangle="668, 583, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="fa891233-4596-450f-a716-9e39b3895309" InformativeScreenshot="8e241d72ea06abbd0ada76cd9873e1e9.png" Reference="6dvU-60sjkapofsDhB2_vQ/o1ICMY0CfkiNwZGBuLf7bQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="486, 585, 170, 20" CvTextArgument="School Playground" CvType="Text" DesignTimeRectangle="487, 584, 180, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Playground : ' check:innerText='School Playground :' /&gt;" Guid="ff95d0c1-7789-46db-86c9-6a8bba74ea4f" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;School Playground is : &quot;+ScPlayground]" />
+                          <uix:NGetText DisplayName="Get Text 'Facilities'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScFacilities]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" ContentHash="7RBXig2KdU-kROafYZcyCQ" CvTextArea="659, 572, 80, 16" CvType="AnyWordGroup" DesignTimeRectangle="658, 570, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="0efde3fa-354a-4708-ae43-25ff422251e5" InformativeScreenshot="8ef517cd7fde8c6b503f5e775342cd6d.png" Reference="6dvU-60sjkapofsDhB2_vQ/Ga9o1PiVrES0JUkLsTE8dw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="564, 572, 92, 16" CvTextArgument="Facilities :" CvType="Text" DesignTimeRectangle="565, 571, 91, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='Facilities : ' check:innerText='Facilities :' /&gt;" Guid="8f206d53-ca42-44f3-9803-14871cac4a83" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Accrediation'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScAccrediation]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" ContentHash="oEiyZL78KUKywLcRh_a8ww" CvTextArea="649, 612, 96, 17" CvType="AnyWordGroup" DesignTimeRectangle="658, 610, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="2c63ad1d-86c3-4daa-a4f1-18ff9eb9439c" InformativeScreenshot="7184a40ed159093b66a32fb4b472a984.png" Reference="6dvU-60sjkapofsDhB2_vQ/lwBtELXdA0i7NBLH7Y5hZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="465, 612, 180, 17" CvTextArgument="School Accrediation" CvType="Text" DesignTimeRectangle="467, 611, 189, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Accrediation : ' check:innerText='School Accrediation :' /&gt;" Guid="2792e8d4-1e67-4177-8be3-42855dd09fe6" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Hostel'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScHostel]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" ContentHash="CyIjUr9pZEu8VVpjelUX7Q" CvTextArea="655, 652, 277, 19" CvType="AnyWordGroup" DesignTimeRectangle="658, 650, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="63739e0b-3b1c-4add-91ce-0e2e1c88bd2d" InformativeScreenshot="91697c55f299b4d7eb7ccbc8c20328a0.png" Reference="6dvU-60sjkapofsDhB2_vQ/kx3I03uZUU-XMFHpvgzVfw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="521, 652, 135, 16" CvTextArgument="School Hostel :" CvType="Text" DesignTimeRectangle="522, 651, 134, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Hostel : ' check:innerText='School Hostel :' /&gt;" Guid="ccb37a23-dc1b-47bc-8481-ec06a2f38689" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Canteen'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScCanteen]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" ContentHash="fCvXxUMMN0am5V9PxZYNew" CvTextArea="657, 692, 263, 16" CvType="AnyWordGroup" DesignTimeRectangle="658, 690, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="ff177cc1-f237-47e2-bb0e-d3354ab3d0c9" InformativeScreenshot="b8048c358d16df672d561f1c867a8d03.png" Reference="6dvU-60sjkapofsDhB2_vQ/fz6lTaTcK0uRFoi-cMDMWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="504, 692, 152, 17" CvTextArgument="School Canteen :" CvType="Text" DesignTimeRectangle="506, 691, 150, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Canteen : ' check:innerText='School Canteen :' /&gt;" Guid="2ebbb24f-dce9-46eb-b24d-0b3e22195cc0" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Stationary'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScStationary]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" ContentHash="tE5KBUToHUylfUj7yCvr7g" DesignTimeRectangle="658, 530, 292, 41" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="1eb334cd-e129-4607-9db8-b58bb2ad9252" InformativeScreenshot="37257f62dbbbc681450b97e37e99fa28.png" Reference="6dvU-60sjkapofsDhB2_vQ/Nf6hHF9x_E2dakiYtItHOg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="fdf7505a-9071-44a4-a458-d14729b20481" CvTextArea="484, 532, 172, 16" CvTextArgument="School Stationary :" CvType="Text" DesignTimeRectangle="486, 531, 170, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Stationary : ' check:innerText='School Stationary :' /&gt;" Guid="bb91909e-b3af-4d58-88d0-0c3d4325569d" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Teaching method's'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_16" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScTeachingMethod]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="978df691-d2a0-4921-bc6a-681265cfdc94" ContentHash="0-6JuB08p0mboHxLcowWkw" CvTextArea="674, 547, 215, 12" CvType="AnyWordGroup" DesignTimeRectangle="676, 546, 275, 26" DesignTimeScaleFactor="0.6666666865348816" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="205592a2-55c4-4e4f-b47a-f14c427c7ed9" InformativeScreenshot="d05baa2c63576cfc92dea6f74e980176.png" Reference="6dvU-60sjkapofsDhB2_vQ/lpqsTSvkE0OLeD4UNqltDQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="978df691-d2a0-4921-bc6a-681265cfdc94" CvTextArea="509, 547, 160, 12" CvTextArgument="School Teaching method's" CvType="Text" DesignTimeRectangle="511, 547, 164, 13" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Teaching method*' check:innerText='School Teaching method&amp;apos;s :' /&gt;" Guid="43c10382-4536-4e04-a48c-a4aec8da6db1" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Timing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScTiming]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="3292ad80-f457-43df-8aed-145a8c88d7b2" ContentHash="zlxeb65dek2-54liMe2r-g" CvTextArea="656, 615, 168, 18" CvType="AnyWordGroup" DesignTimeRectangle="658, 612, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="98e07dc5-2695-43b9-b703-335fcd2f47e6" InformativeScreenshot="2bb58722206346117c3a7cc4b3ea4914.png" Reference="6dvU-60sjkapofsDhB2_vQ/dYbMgL_KBUO8I_sT2H9HTw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="3292ad80-f457-43df-8aed-145a8c88d7b2" CvTextArea="516, 614, 140, 17" CvTextArgument="School Timing :" CvType="Text" DesignTimeRectangle="518, 613, 138, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Timing : ' check:innerText='School Timing :' /&gt;" Guid="7af56760-8ae7-4ab9-819f-1353c2e8f505" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Achivements'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScAchivements]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="3292ad80-f457-43df-8aed-145a8c88d7b2" ContentHash="gBgLTqk6KEq_ELWzpccqJw" CvTextArea="658, 654, 196, 16" CvType="AnyWordGroup" DesignTimeRectangle="658, 652, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="57bbd84b-9d3c-4748-87b6-4887c770f94b" InformativeScreenshot="5083d29fbb628f21827152cb2fdd7ad3.png" Reference="6dvU-60sjkapofsDhB2_vQ/z_BmMdCPgEOgvKWWQ57MCw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="3292ad80-f457-43df-8aed-145a8c88d7b2" CvTextArea="463, 654, 193, 16" CvTextArgument="School Achivements :" CvType="Text" DesignTimeRectangle="464, 653, 192, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Achivements :  ' check:innerText='School Achivements :' /&gt;" Guid="541e795e-6c61-4a4d-837e-e57fe4d3e7c7" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Awards'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_19" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScAwards]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="95819cb3-af4d-4e7a-8683-2dadf916a00f" ContentHash="AsYliUIdHUqqc9g5dtBZWw" CvTextArea="659, 595, 147, 15" CvType="AnyWordGroup" DesignTimeRectangle="658, 592, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="4f2b1aba-eb84-4202-a180-55152b7b01f7" InformativeScreenshot="78b9b676a40f67f1ea89419631fcbaf6.png" Reference="6dvU-60sjkapofsDhB2_vQ/ekX-RER-2UK6QlhqyqBuDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="95819cb3-af4d-4e7a-8683-2dadf916a00f" CvTextArea="511, 594, 145, 16" CvTextArgument="School Awards :" CvType="Text" DesignTimeRectangle="512, 593, 144, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Awards : ' check:innerText='School Awards :' /&gt;" Guid="1dd381ba-d0b4-4653-aaba-30a9131a6d5a" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School Uniform'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScUniform]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" ContentHash="1sTD9bHNSUugygL24yxclA" DesignTimeRectangle="658, 632, 292, 41" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="b770f676-b6e8-42b7-890a-e2608ad95973" InformativeScreenshot="939b9e07b28435c348b919b08838c22d.png" Reference="6dvU-60sjkapofsDhB2_vQ/H4vvAY0sK0OKQoyDgAuQgw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="95819cb3-af4d-4e7a-8683-2dadf916a00f" CvTextArea="505, 634, 151, 16" CvTextArgument="School Uniform :" CvType="Text" DesignTimeRectangle="507, 633, 149, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Uniform : ' check:innerText='School Uniform :' /&gt;" Guid="19aca123-b91c-4039-83ac-8cac0a2676c4" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NGetText DisplayName="Get Text 'School type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="ceee951a-7a29-4ffa-861c-b6b5e056fc7a" TextString="[ScType]" Version="V4">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="botsdna.com/school/258491.html" CVScreenId="95819cb3-af4d-4e7a-8683-2dadf916a00f" ContentHash="S0YMPa0oJkCgfVD3DfKxxg" CvTextArea="662, 675, 104, 16" CvType="AnyWordGroup" DesignTimeRectangle="658, 673, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="60cae4a2-ac15-41a1-b2b1-a88a494459c7" InformativeScreenshot="e95d0171fd711156a69d2a8087bda4d2.png" Reference="6dvU-60sjkapofsDhB2_vQ/G7Yf1hWcbkeRcJRQJel_Tg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="95819cb3-af4d-4e7a-8683-2dadf916a00f" CvTextArea="538, 675, 118, 17" CvTextArgument="School type :" CvType="Text" DesignTimeRectangle="540, 674, 116, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School type :  ' check:innerText='School type :' /&gt;" Guid="f85d37c1-c34c-4b0f-bfb7-fd0f52537a9c" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[in_InputDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="434,324" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="School Code" LookupValue="[in_TransactionItem.SpecificContent(&quot;School Code&quot;).ToString]" RowIndex="[ScName_RowIndex]" TargetColumnName="School Name" />
+                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[ScName_RowIndex]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[ScName_RowIndex+2]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;B&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScName" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScName]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;C&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScAddress" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScAddress]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;D&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScPhoneNumber" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScPhoneNo]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;E&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScNumberOfStudent" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScNoOfStudent]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;F&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScPrincipleName" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScPrincipleName]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;G&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScNoOFTeachingStaff" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScNoOfStaff]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;H&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScNoOfNonTeachingStaff" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_8" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScNoOfNonTeachingStaff]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;I&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell NumberOfSchoolBuses" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_9" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScNoOfSchoolBuses]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;J&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScPlayground" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_10" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScPlayground]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;K&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScFacilities" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_11" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScFacilities]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;L&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScAccediation" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_12" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScAccrediation]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;M&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScHostel" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_13" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScHostel]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;N&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScCanteen" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_14" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScCanteen]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;O&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScStationary" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_15" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScStationary]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;P&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScTeachingMethod" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_16" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScTeachingMethod]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;Q&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScTiming" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_17" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScTiming]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;R&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScAchivements" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_18" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScAchivements]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;S&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScAwards" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_19" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScAwards]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;T&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScUniform" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_20" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScUniform]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;U&quot;+ScName_RowIndex.ToString]" DisplayName="Write Cell ScType" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteCell_21" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" Text="[ScType]" WorkbookPath="[in_OutFolderFileName]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;School Type is : &quot;+ScType+&quot; &amp; SchoolInfoAddItem done for : &quot;+in_TransactionItem.SpecificContent(&quot;School Code&quot;).ToString]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" ContentHash="bwfoL-kvhUK3zKpy-pjJtQ" IconBase64="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" InformativeScreenshot="0ef4f245ceca92c3c851cf0774e468a2.jpg" Reference="6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg" Selector="&lt;html app='chrome.exe' title='botsdna.com/school/*.html' /&gt;" Url="[var_SchoolInfoUrl]" Version="V2" />
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" ContentHash="jMf5nm1Jm0WKfiU1sBsr-w" IconBase64="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" InformativeScreenshot="913a65a40c8e98f18d44d71cf6f94a05.jpg" Reference="6dvU-60sjkapofsDhB2_vQ/46N-bkiBakKCeV1jV_UJbQ" Selector="&lt;html app='chrome.exe' title='botsdna.com/school/' /&gt;" Url="[in_Config(&quot;ApplicationURL&quot;).ToString]" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

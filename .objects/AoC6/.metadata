@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome botsdna.comschool",
+  "Type": "App",
+  "Id": "AoC6zQ2tfE-hdDOYOfyO4A",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/AoC6zQ2tfE-hdDOYOfyO4A",
+  "Created": "2025-03-14T14:46:08.5285287Z",
+  "Updated": "2025-03-14T14:46:08.5285287Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

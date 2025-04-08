@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome botsdna.comschool",
+  "Type": "Screen",
+  "Id": "h9QDQYYKhUqKHdWaupj5Tg",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/h9QDQYYKhUqKHdWaupj5Tg",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/DLEFJv7ocUyOzb7AE8WEVg",
+  "Created": "2025-03-14T14:46:08.6251184Z",
+  "Updated": "2025-03-14T14:46:08.6251184Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

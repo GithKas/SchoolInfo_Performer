@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0akyRxjW7kC4qKDdW8r5Gw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school" CVScreenId="9abd5df1-2303-40cf-a3dc-8feb38645fae" CvElementArea="767, 352, 119, 51" CvTextArea="800, 369, 53, 15" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="769, 354, 115, 48" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='SearchSchool' tag='INPUT' type='button' class='button' aaname='Search' check:text='Search' /&gt;" Guid="b3dd812a-39e1-499d-8ff3-08c4445cc249" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f4d7349a756652aa71e7e9dfd256cbae.png" xmlns="">0ZWXV6-kLAkOaUJImKy9Ypw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "School Stationary",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Nf6hHF9x_E2dakiYtItHOg",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/Nf6hHF9x_E2dakiYtItHOg",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg",
+  "Created": "2025-03-13T20:40:13.7053921Z",
+  "Updated": "2025-03-13T20:40:13.7053921Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

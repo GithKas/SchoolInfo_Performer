@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="epabfZFS3UOq5Js40hYksw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/274812.html" CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="659, 585, 197, 20" CvType="AnyWordGroup" DesignTimeRectangle="668, 583, 282, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="fa891233-4596-450f-a716-9e39b3895309" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/274812.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="800f83eb-09a7-40b0-ab6c-da0fce3c8a80" CvTextArea="486, 585, 170, 20" CvTextArgument="School Playground" CvType="Text" DesignTimeRectangle="487, 584, 180, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Playground : ' check:innerText='School Playground :' /&gt;" Guid="ff95d0c1-7789-46db-86c9-6a8bba74ea4f" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="8e241d72ea06abbd0ada76cd9873e1e9.png" xmlns="">0V2wRzUspGUuBZK6cpSzZAA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

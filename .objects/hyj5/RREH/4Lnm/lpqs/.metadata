@@ -1,0 +1,14 @@
+﻿{
+  "Name": "School Teaching method's",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "lpqsTSvkE0OLeD4UNqltDQ",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/lpqsTSvkE0OLeD4UNqltDQ",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg",
+  "Created": "2025-03-13T20:50:24.4914715Z",
+  "Updated": "2025-03-13T20:50:24.4914715Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

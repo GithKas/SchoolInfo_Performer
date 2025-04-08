@@ -1,0 +1,14 @@
+﻿{
+  "Name": "School Canteen",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "fz6lTaTcK0uRFoi-cMDMWw",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/fz6lTaTcK0uRFoi-cMDMWw",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg",
+  "Created": "2025-03-13T20:35:56.8242909Z",
+  "Updated": "2025-03-13T20:35:56.8242909Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

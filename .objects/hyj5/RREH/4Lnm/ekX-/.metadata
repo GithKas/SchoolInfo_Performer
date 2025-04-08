@@ -1,0 +1,14 @@
+﻿{
+  "Name": "School Awards",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ekX-RER-2UK6QlhqyqBuDA",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/ekX-RER-2UK6QlhqyqBuDA",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/4LnmHN42dEmLMhxB4GqZWg",
+  "Created": "2025-03-13T20:59:42.0158257Z",
+  "Updated": "2025-03-13T20:59:42.0158257Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

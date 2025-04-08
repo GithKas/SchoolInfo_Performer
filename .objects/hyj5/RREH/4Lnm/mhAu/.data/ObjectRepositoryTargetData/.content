@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hy243CsWP0KXpBDTrXs-dg" Reference="6dvU-60sjkapofsDhB2_vQ/mhAus9PZSEeKZfGmJUAj7A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/441539.html" CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" CvTextArea="688, 303, 165, 19" CvType="AnyWordGroup" DesignTimeRectangle="686, 301, 264, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="f1ee6b8d-a03a-4243-82d6-a42a49eefd91" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/441539.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="a211daa7-ad64-40f7-b805-464c2d2fb5f1" CvTextArea="533, 303, 151, 16" CvTextArgument="School Address :" CvType="Text" DesignTimeRectangle="535, 302, 149, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Address : ' check:innerText='School Address :' /&gt;" Guid="bf8e23f9-cc82-4c74-9d55-9cdd16600856" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3412e350e98e9e29bfb331a84881a834.png" xmlns="">0LLlaBGNbdUq7wYsbDi0ZlQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "School Code",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "2d4h4iLHgkmg5BaVxQdDdQ",
+  "Reference": "6dvU-60sjkapofsDhB2_vQ/2d4h4iLHgkmg5BaVxQdDdQ",
+  "ParentRef": "6dvU-60sjkapofsDhB2_vQ/46N-bkiBakKCeV1jV_UJbQ",
+  "Created": "2025-03-10T10:04:36.8811676Z",
+  "Updated": "2025-03-10T10:04:36.8811676Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oEiyZL78KUKywLcRh_a8ww" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="botsdna.com/school/258491.html" CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="649, 612, 96, 17" CvType="AnyWordGroup" DesignTimeRectangle="658, 610, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="2c63ad1d-86c3-4daa-a4f1-18ff9eb9439c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='botsdna.com/school/258491.html' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9c15e467-c2fa-432a-99ed-8bf7a5992250" CvTextArea="465, 612, 180, 17" CvTextArgument="School Accrediation" CvType="Text" DesignTimeRectangle="467, 611, 189, 19" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='B' class='' aaname='School Accrediation : ' check:innerText='School Accrediation :' /&gt;" Guid="2792e8d4-1e67-4177-8be3-42855dd09fe6" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7184a40ed159093b66a32fb4b472a984.png" xmlns="">0cHvHy1yj1kigGWhTXQy3Cg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
